@@ -1,0 +1,1088 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('5.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.signin-container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signin-box h1 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: #9d4edd;
+    box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.1);
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-group.checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+}
+
+.form-group.checkbox label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+}
+
+.signin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(157, 78, 221, 0.4);
+}
+
+.signin-btn:active {
+    transform: translateY(0);
+}
+
+.signin-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-message {
+    display: none;
+    background-color: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    animation: slideIn 0.3s ease-out;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.success-message {
+    display: none;
+    background-color: #efe;
+    color: #3c3;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3c3;
+    animation: slideIn 0.3s ease-out;
+}
+
+.success-message.show {
+    display: block;
+}
+
+.footer-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #b855d9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #dbaaf8;
+    text-decoration: underline;
+}
+
+.footer-links .divider {
+    color: #dddddd;
+    margin: 0 10px;
+}
+
+.demo-credentials {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #9d4edd;
+}
+
+.demo-credentials p {
+    color: #333;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.demo-credentials p:first-child {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #9d4edd;
+}
+
+.demo-credentials code {
+    background-color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #c77dff;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    color: #333;
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-name {
+    color: #333;
+    font-weight: 500;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #9d4edd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c77dff;
+}
+
+.dashboard-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dashboard-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.dashboard-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SIGNUP PAGE STYLES */
+.signup-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.signup-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.signup-box h1 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-bar {
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.strength-bar.weak {
+    background: linear-gradient(to right, #e74c3c 0%, #e74c3c 100%);
+}
+
+.strength-bar.fair {
+    background: linear-gradient(to right, #f39c12 0%, #f39c12 100%);
+}
+
+.strength-bar.good {
+    background: linear-gradient(to right, #3498db 0%, #3498db 100%);
+}
+
+.strength-bar.strong {
+    background: linear-gradient(to right, #27ae60 0%, #27ae60 100%);
+}
+
+.strength-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 25%;
+    background-color: currentColor;
+    transition: width 0.3s;
+}
+
+#strengthText {
+    color: #666;
+    font-size: 12px;
+}
+
+.password-requirements {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #9d4edd;
+}
+
+.password-requirements p {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.password-requirements li {
+    color: #999;
+    font-size: 12px;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.password-requirements li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: #999;
+}
+
+.password-requirements li.met {
+    color: #27ae60;
+}
+
+.password-requirements li.met::before {
+    content: '✓';
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.field-error {
+    display: block;
+    color: #c33;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.signin-link {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.signin-link p {
+    color: #666;
+    font-size: 14px;
+}
+
+.signin-link a {
+    color: #9d4edd;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.signin-link a:hover {
+    color: #c77dff;
+    text-decoration: underline;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(157, 78, 221, 0.4);
+}
+
+.signup-btn:active {
+    transform: translateY(0);
+}
+
+.signup-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* WELCOME PAGE STYLES */
+#welcomePage {
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white;
+}
+
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9d4edd;
+}
+
+.logo-icon {
+    font-size: 32px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-signin-btn,
+.nav-signup-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    color: #9d4edd;
+    border: 2px solid #9d4edd;
+}
+
+.nav-signin-btn:hover {
+    background: #9d4edd;
+    color: white;
+}
+
+.nav-signup-btn {
+    background: #9d4edd;
+    color: white;
+}
+
+.nav-signup-btn:hover {
+    background: #c77dff;
+}
+
+.hero {
+    background: linear-gradient(135deg, #5a189a 0%, #9d4edd 50%, #c77dff 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.hero-content {
+    max-width: 600px;
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-primary-large {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #9d4edd;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #9d4edd;
+}
+
+.btn-primary-large {
+    padding: 16px 45px;
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(157, 78, 221, 0.4);
+}
+
+.features {
+    padding: 100px 20px;
+    background: #f8f9fa;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #333;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(157, 78, 221, 0.2);
+    border-top: 3px solid #9d4edd;
+}
+
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #b855d9;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #9d4edd;
+}
+
+/* INSTAGRAM FEED POSTS STYLE */
+.insta-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.insta-post {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.insta-post:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #efefef;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #262626;
+    margin: 0;
+    line-height: 1;
+}
+
+.time {
+    font-size: 12px;
+    color: #8a8a8a;
+    margin: 4px 0 0 0;
+    line-height: 1;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 600px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.post-footer {
+    padding: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #efefef;
+}
+
+.like-btn,
+.comment-btn,
+.share-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.like-btn .icon,
+.comment-btn .icon,
+.share-btn .icon {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.like-btn:hover .icon,
+.comment-btn:hover .icon,
+.share-btn:hover .icon {
+    transform: scale(1.2);
+}
+
+.caption {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #262626;
+    margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.caption strong {
+    color: #262626;
+    margin-right: 4px;
+}
+
+.dashboard-content h3 {
+    color: #262626;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.insta-post h3,
+.insta-post h4 {
+    color: #9d4edd;
+    font-weight: 600;
+    margin: 15px 0 10px 0;
+    text-align: left;
+}
+
+.insta-post h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.insta-post h4 {
+    font-size: 16px;
+}
+
+.insta-post p {
+    text-align: left;
+    color: #262626;
+    padding: 12px 0;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.insta-post .btn {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+}
+
+/* Copyright Footer */
+.copyright-footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #34495e;
+}
+
+.copyright-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -100px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes commentPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes sharePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.like-btn {
+    transition: color 0.2s ease;
+}
+
+.like-btn .icon {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Link as Button Style */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(157, 78, 221, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .nav-buttons {
+        gap: 10px;
+    }
+
+    .nav-signin-btn,
+    .nav-signup-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .features h2,
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    .feature-icon {
+        font-size: 48px;
+    }
+
+    .footer-links {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .insta-feed {
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .insta-post {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
